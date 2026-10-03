@@ -1,0 +1,363 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+  <!-- Background -->
+  <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="500">
+    <stop offset="0%" stop-color="#02050D"/>
+    <stop offset="50%" stop-color="#07162B"/>
+    <stop offset="100%" stop-color="#130A25"/>
+  </linearGradient>
+
+  <!-- Blue glow -->
+  <radialGradient id="blueGlow">
+    <stop offset="0%" stop-color="#3B9EFF" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#3B9EFF" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- Purple glow -->
+  <radialGradient id="purpleGlow">
+    <stop offset="0%" stop-color="#9B5CFF" stop-opacity="0.3"/>
+    <stop offset="100%" stop-color="#9B5CFF" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- Glass -->
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.09"/>
+    <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.025"/>
+    <stop offset="100%" stop-color="#5C8DFF" stop-opacity="0.06"/>
+  </linearGradient>
+
+  <!-- Border -->
+  <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#4AA8FF" stop-opacity="0.8"/>
+    <stop offset="50%" stop-color="#5B6FFF" stop-opacity="0.3"/>
+    <stop offset="100%" stop-color="#B05CFF" stop-opacity="0.8"/>
+  </linearGradient>
+
+  <!-- Text gradient -->
+  <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="55%" stop-color="#8CCBFF"/>
+    <stop offset="100%" stop-color="#C18BFF"/>
+  </linearGradient>
+
+  <!-- Grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" stroke="#4AA8FF" stroke-opacity="0.07"/>
+  </pattern>
+
+  <!-- Glow filter -->
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="4" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+</defs>
+
+
+<!-- BACKGROUND -->
+<rect width="1200" height="500" rx="22" fill="url(#bg)"/>
+
+<!-- Ambient glow -->
+<circle cx="180" cy="100" r="260" fill="url(#blueGlow)"/>
+<circle cx="1040" cy="390" r="300" fill="url(#purpleGlow)"/>
+
+<!-- Grid -->
+<rect width="1200" height="500" fill="url(#grid)"/>
+
+
+<!-- OUTER HUD FRAME -->
+<rect x="28" y="28" width="1144" height="444" rx="18"
+      stroke="url(#border)" stroke-opacity="0.4"/>
+
+<!-- HUD CORNERS -->
+
+<path d="M55 100V55H100"
+      stroke="#56B4FF" stroke-width="2" opacity="0.8"/>
+
+<path d="M1100 55H1145V100"
+      stroke="#A86CFF" stroke-width="2" opacity="0.8"/>
+
+<path d="M55 400V445H100"
+      stroke="#56B4FF" stroke-width="2" opacity="0.6"/>
+
+<path d="M1100 445H1145V400"
+      stroke="#A86CFF" stroke-width="2" opacity="0.6"/>
+
+
+<!-- HEADER -->
+
+<text x="70" y="83"
+      fill="#69BFFF"
+      font-family="monospace"
+      font-size="13"
+      letter-spacing="4">
+  PYTHON AUDIO INTERFACE // 01
+</text>
+
+<text x="70" y="130"
+      fill="url(#title)"
+      font-family="Arial, sans-serif"
+      font-size="42"
+      font-weight="700"
+      letter-spacing="3">
+  LYRICS.PY
+</text>
+
+<text x="72" y="158"
+      fill="#91A8C7"
+      font-family="monospace"
+      font-size="13"
+      letter-spacing="2">
+  TERMINAL LYRIC DISPLAY SYSTEM
+</text>
+
+
+<!-- STATUS -->
+
+<rect x="965" y="72" width="145" height="34" rx="17"
+      fill="#07182B"
+      stroke="#2F8FFF"
+      stroke-opacity="0.5"/>
+
+<circle cx="988" cy="89" r="5"
+        fill="#56B4FF"
+        filter="url(#glow)">
+  <animate attributeName="opacity"
+           values="1;0.3;1"
+           dur="1.8s"
+           repeatCount="indefinite"/>
+</circle>
+
+<text x="1002" y="94"
+      fill="#8BCBFF"
+      font-family="monospace"
+      font-size="11"
+      letter-spacing="1">
+  SYSTEM ONLINE
+</text>
+
+
+<!-- MAIN GLASS PANEL -->
+
+<rect x="70" y="190" width="1060" height="210" rx="18"
+      fill="url(#glass)"
+      stroke="url(#border)"
+      stroke-opacity="0.35"/>
+
+
+<!-- LEFT MUSIC CORE -->
+
+<circle cx="145" cy="295" r="55"
+        fill="#07172C"
+        stroke="#399CFF"
+        stroke-opacity="0.5"/>
+
+<circle cx="145" cy="295" r="42"
+        fill="none"
+        stroke="#5BB5FF"
+        stroke-opacity="0.3"
+        stroke-width="2">
+
+  <animateTransform
+    attributeName="transform"
+    type="rotate"
+    from="0 145 295"
+    to="360 145 295"
+    dur="8s"
+    repeatCount="indefinite"/>
+
+</circle>
+
+<circle cx="145" cy="295" r="26"
+        fill="#0B2440"
+        stroke="#8A5CFF"
+        stroke-opacity="0.7">
+
+  <animate attributeName="r"
+           values="26;29;26"
+           dur="1.8s"
+           repeatCount="indefinite"/>
+
+</circle>
+
+<text x="145" y="303"
+      text-anchor="middle"
+      fill="#FFFFFF"
+      font-family="Arial"
+      font-size="25">
+  ♪
+</text>
+
+
+<!-- LYRIC DISPLAY -->
+
+<text x="235" y="235"
+      fill="#4FAEFF"
+      font-family="monospace"
+      font-size="11"
+      letter-spacing="3">
+  NOW DISPLAYING
+</text>
+
+<text x="235" y="275"
+      fill="#FFFFFF"
+      font-family="Arial, sans-serif"
+      font-size="25"
+      font-weight="600">
+  Your favorite lyrics
+</text>
+
+<text x="235" y="310"
+      fill="#91A8C7"
+      font-family="monospace"
+      font-size="14">
+  ♪  line by line through the terminal
+</text>
+
+<text x="235" y="340"
+      fill="#91A8C7"
+      font-family="monospace"
+      font-size="14">
+  ♪  simple Python implementation
+</text>
+
+
+<!-- WAVEFORM -->
+
+<g transform="translate(830 235)" fill="#6AB9FF">
+
+  <rect x="0" y="38" width="5" height="20" rx="2">
+    <animate attributeName="height"
+             values="20;42;15;30;20"
+             dur="1s"
+             repeatCount="indefinite"/>
+    <animate attributeName="y"
+             values="38;16;43;28;38"
+             dur="1s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="15" y="25" width="5" height="45" rx="2">
+    <animate attributeName="height"
+             values="45;18;50;30;45"
+             dur="1.2s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="30" y="10" width="5" height="70" rx="2">
+    <animate attributeName="height"
+             values="70;30;60;15;70"
+             dur="0.9s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="45" y="30" width="5" height="38" rx="2">
+    <animate attributeName="height"
+             values="38;60;20;50;38"
+             dur="1.1s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="60" y="20" width="5" height="55" rx="2">
+    <animate attributeName="height"
+             values="55;20;65;35;55"
+             dur="1s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="75" y="35" width="5" height="25" rx="2">
+    <animate attributeName="height"
+             values="25;50;15;40;25"
+             dur="1.3s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="90" y="15" width="5" height="65" rx="2">
+    <animate attributeName="height"
+             values="65;25;70;40;65"
+             dur="0.8s"
+             repeatCount="indefinite"/>
+  </rect>
+
+</g>
+
+
+<!-- BOTTOM STATUS BAR -->
+
+<line x1="235" y1="365"
+      x2="1080" y2="365"
+      stroke="#4A8FD4"
+      stroke-opacity="0.15"/>
+
+<text x="235" y="386"
+      fill="#58718F"
+      font-family="monospace"
+      font-size="10"
+      letter-spacing="2">
+  ENGINE // PYTHON
+</text>
+
+<text x="465" y="386"
+      fill="#58718F"
+      font-family="monospace"
+      font-size="10"
+      letter-spacing="2">
+  OUTPUT // TERMINAL
+</text>
+
+<text x="735" y="386"
+      fill="#58718F"
+      font-family="monospace"
+      font-size="10"
+      letter-spacing="2">
+  MODE // LYRICS
+</text>
+
+<text x="990" y="386"
+      fill="#9C73FF"
+      font-family="monospace"
+      font-size="10"
+      letter-spacing="2">
+  ACTIVE
+</text>
+
+
+<!-- FOOTER -->
+
+<text x="70" y="438"
+      fill="#45627F"
+      font-family="monospace"
+      font-size="10"
+      letter-spacing="3">
+  // CODE • MUSIC • PYTHON
+</text>
+
+<text x="1130" y="438"
+      text-anchor="end"
+      fill="#45627F"
+      font-family="monospace"
+      font-size="10"
+      letter-spacing="2">
+  MICHAEL // 2026
+</text>
+
+
+<!-- SCAN LINE -->
+
+<rect x="70" y="190" width="1060" height="2"
+      fill="#55B7FF"
+      opacity="0.08">
+
+  <animate attributeName="y"
+           values="190;398;190"
+           dur="5s"
+           repeatCount="indefinite"/>
+
+</rect>
+
+</svg>
