@@ -1,2 +1,5 @@
-# lyrics-python
-A simple Python project for displaying song lyrics
+<div align="center">
+
+<img src="./lyrics.svg" width="100%" alt="Lyrics Python"/>
+
+</div>
