@@ -1,0 +1,44 @@
+import time
+import sys
+
+
+LYRICS = [
+    ("Kuyakin nyawa kita bertautan", 1.0, 0.06),
+    ("Khatam berbagai cobaan", 6.2, 0.06),
+    ("Selalu menertawakan ramalan bintang kartu tarot", 10.0, 0.06),
+    ("Orang pintar pembaca nasib", 14.2, 0.06),
+    ("Namun aku bingung kenapa ku tak pergi", 17.2, 0.06),
+    ("Aku bingung kalian masih di sini", 21.5, 0.06),
+    ("Apa mungkin karena terlalu lama", 25.7, 0.06),
+    ("Apa benar tuk berbagi derita", 29.3, 0.06),
+    ("Mungkin nanti semua justru memburuk", 33.3, 0.06),
+    ("Hati-hati namun terjatuh lagi", 36.8, 0.06),
+    ("Tapi luka adalah niscaya", 40.8, 0.06),
+    ("Kutanggung denganmu selama ku mampu", 44.6, 0.06),
+]
+
+
+def animate_text(text, speed):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(speed)
+
+    print()
+
+
+def sing_song():
+    start_time = time.time()
+
+    for lyric, timestamp, speed in LYRICS:
+        elapsed = time.time() - start_time
+        wait_time = timestamp - elapsed
+
+        if wait_time > 0:
+            time.sleep(wait_time)
+
+        animate_text(lyric, speed)
+
+
+if __name__ == "__main__":
+    sing_song()
